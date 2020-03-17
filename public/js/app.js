@@ -99,60 +99,60 @@ $(function(){
 });
 
 //Add to friends
- $(function(){
-     var $element = $('#chat-list > ul > li > a');
+// $(function(){
+//     var $element = $('#chat-list > ul > li > a');
 
-     var a, b, c;
+//     var a, b, c;
 
-     function toggleMenu(e){
-         e.preventDefault();
-         var $this = $(this);
-         var menu = $("<ul class='menu'></ul>"),
-             addFriend = $("<li><a href='#'>Add to friend list</a></li>");
+//     function toggleMenu(e){
+//         e.preventDefault();
+//         var $this = $(this);
+//         var menu = $("<ul class='menu'></ul>"),
+//             addFriend = $("<li><a href='#'>Add to friend list</a></li>");
 
-         addFriend.appendTo(menu);
+//         addFriend.appendTo(menu);
 
-         $this.closest('li').siblings().find('.menu').remove();
+//         $this.closest('li').siblings().find('.menu').remove();
 
-         if (!$this.closest('li').find('.menu').length) {
-             clearTimeout(a);
-             clearTimeout(b);
-             clearTimeout(c);
+//         if (!$this.closest('li').find('.menu').length) {
+//             clearTimeout(a);
+//             clearTimeout(b);
+//             clearTimeout(c);
 
-             menu.appendTo($this.closest('li'));
-             c = setTimeout(function(){
-                 $this.closest('li').find('.menu').addClass('menu-open');
-             }, 50);
-         } else {
-             if ($this.closest('li').find('.menu').hasClass('menu-open')) {
-                 $this.closest('li').find('.menu').removeClass('menu-open');
+//             menu.appendTo($this.closest('li'));
+//             c = setTimeout(function(){
+//                 $this.closest('li').find('.menu').addClass('menu-open');
+//             }, 50);
+//         } else {
+//             if ($this.closest('li').find('.menu').hasClass('menu-open')) {
+//                 $this.closest('li').find('.menu').removeClass('menu-open');
 
-                 a = setTimeout(function(){
-                     $this.closest('li').find('.menu').remove();
-                 }, 300);
-             }
-         }
+//                 a = setTimeout(function(){
+//                     $this.closest('li').find('.menu').remove();
+//                 }, 300);
+//             }
+//         }
 
-         $(document).click(function (e) {
-             var container = $element;
+//         $(document).click(function (e) {
+//             var container = $element;
 
 //             // if the target of the click isn't the container nor a descendant of the container
-             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                 menu.removeClass('menu-open');
+//             if (!container.is(e.target) && container.has(e.target).length === 0) {
+//                 menu.removeClass('menu-open');
 
-                 a = setTimeout(function(){
-                     menu.remove();
-                 }, 300);
-             }
-         });
+//                 a = setTimeout(function(){
+//                     menu.remove();
+//                 }, 300);
+//             }
+//         });
 
-         $(document).click(function (e) {
-              var container = $(".menu");
-        
-       //     // if the target of the click isn't the container nor a descendant of the container
-         if (!container.is(e.target) && container.has(e.target).length === 0) {
-                 $('body').removeClass('menu-is-open');
-                 container.removeClass('menu-open');
+//         // $(document).click(function (e) {
+//         //     var container = $(".menu");
+//         //
+//         //     // if the target of the click isn't the container nor a descendant of the container
+//         //     if (!container.is(e.target) && container.has(e.target).length === 0) {
+//         //         $('body').removeClass('menu-is-open');
+//         //         container.removeClass('menu-open');
 //         //         container.remove();
 //         //     }
 //         // });
