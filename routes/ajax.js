@@ -17,7 +17,7 @@ const upload = multer({
                 const mimeType = mime.lookup(file.originalname);
                 // throw away any extension if provided
                 const nameSplit = file.originalname.split(".").slice(0, -1);
-                // nameSplit.pop();
+                nameSplit.pop();
 
                 // replace all white spaces with - for safe file name on different filesystem
                 const name = nameSplit.join(".").replace(/\s/g, "-");
@@ -61,14 +61,14 @@ router.post("/profile/img", middleware.isLogedIn, upload.single("file"), (req, r
 
 
 // Set the channel picture
-// router.post("/channel/:id/img", middleware.isLogedIn, upload.single("file"), (req, res)=>{
-//     console.log("hey");
-//     if(req.file){
-//         console.log(req.file);
-//         const file = {
-//             path: "/files/image/channel/" + req.file.filename,
-//         };
-//        Channel.findByIdAndUpdate(req.params.id, { channel_picture: file.path }).then(()=>{
+router.post("/channel/:id/img", middleware.isLogedIn, upload.single("file"), (req, res)=>{
+  console.log("hey");
+     if(req.file){
+         console.log(req.file);
+         const file = {
+               path: "/files/image/channel/" + req.file.filename,
+         };
+        Channel.findByIdAndUpdate(req.params.id, { channel_picture: file.path }).then(()=>{
 //             res.send(file);
 //        });
 //     }else{

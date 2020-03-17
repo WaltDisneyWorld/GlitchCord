@@ -19,7 +19,7 @@ const upload = multer({
                 const mimeType = mime.lookup(file.originalname);
                 // throw away any extension if provided
                 const nameSplit = file.originalname.split(".").slice(0, -1);
-                // nameSplit.pop();
+                 nameSplit.pop();
 
                 // replace all white spaces with - for safe file name on different filesystem
                 const name = nameSplit.join(".").replace(/\s/g, "-");
