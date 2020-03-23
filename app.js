@@ -59,14 +59,14 @@ app.use(passport.session());
 
 // Login Strategy
 passport.use("local-login", new LocalStrategy({
-    usernameField: "email",
+    usernameField: "username",
     passwordField: "password",
     passReqToCallback: true,
 }, passportStrategy.localSiginStrategy));
 
 // Sign UP Strategy
 passport.use("local-signup", new LocalStrategy({
-    usernameField: "email",
+    usernameField: "username",
     passwordField: "password",
     passReqToCallback: true,
 }, passportStrategy.localSignupStrategy));
