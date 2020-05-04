@@ -16,7 +16,7 @@
         "indent":"off",
         "arrow-spacing": ["error", { "before": false, "after": false }],
         "no-underscore-dangle": "off",
-        "prefer-template":"on",
+        "prefer-template":"off",
         "space-before-blocks":"off",
         "keyword-spacing": ["error", { "overrides": {
             "if": { "after": false },
