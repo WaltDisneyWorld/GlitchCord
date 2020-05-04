@@ -16,7 +16,7 @@ const  localSignupStrategy = (req, email, password, done)=>{
                 }
                 // check to see if theres already a user with that email
                 if(user){
-                    return done(null, false, { message: "User already registered" });
+                    return done(null, false, { message: "User already registered with this email. Please try another email." });
                 }else{
                     bcrypt.genSalt(10, (errC, salt)=>{
                         bcrypt.hash(password, salt, (errCrypt, res)=>{
