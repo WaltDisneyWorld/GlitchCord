@@ -32,11 +32,11 @@ mongoose.Promise = global.Promise;
 
 
 // boot if db is available
-mongoose.connect(config.dbURL, { reconnectTries: 5 })
+mongoose.connect(config.dbURL, { reconnectTries: 10 })
     .then(()=>{
         // boot
         server.listen(config.port, ()=>{
-            console.log("listening on " + config.port);
+            console.log("listenning on " + config.port);
         });
     })
     .catch((dbErr)=>{
