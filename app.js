@@ -32,7 +32,7 @@ mongoose.Promise = global.Promise;
 
 
 // boot if db is available
-mongoose.connect(config.dbURL, { reconnectTries: 5 })
+mongoose.connect(config.dbURL, { reconnectTries: 10 })
     .then(()=>{
         // boot
         server.listen(config.port, ()=>{
