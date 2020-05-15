@@ -29,7 +29,8 @@ jQuery("#message-form").on("submit", function(e){
     var messageTextBox =  jQuery("[name=message]");
 
 
-    var message = escapeHTML(messageTextBox.val().trim(), true);
+    var message = messageTextBox.val().trim();
+  
     if(message === "") return;
 
     var data = {
@@ -69,20 +70,6 @@ socket.on("disconnect", function(){
 });
 
 
-// Escape Html
-var ESC_MAP = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;'
-};
-
-function escapeHTML(s, forAttribute) {
-    return s.replace(forAttribute ? /[&<>'"]/g : /[&<>]/g, function(c) {
-        return ESC_MAP[c];
-    });
-}
 
 // if User is looking at previous message we should not scroll down -- not yet implemented
 function scrollToBottom(){
