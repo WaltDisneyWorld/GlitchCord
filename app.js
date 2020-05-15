@@ -22,6 +22,7 @@ const io             = socketIO(server);
 
 // Configure IO
 require("./io/index")(io);
+require("string.prototype.safe");
 
 // Configure app and mongoose
 app.use(express.static(__dirname + "/public"));
