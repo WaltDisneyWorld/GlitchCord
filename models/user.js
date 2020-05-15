@@ -11,7 +11,7 @@ const   validator = require("validator");
         type: String,
         required: true,
         minlength: 1,
-        unique: true,
+        unique: false,
         trim: true,
         validate: {
             validator: value=>validator.isEmail(value),
