@@ -61,19 +61,19 @@ router.post("/profile/img", middleware.isLogedIn, upload.single("file"), (req, r
 
 
 // Set the channel picture
-// router.post("/channel/:id/img", middleware.isLogedIn, upload.single("file"), (req, res)=>{
-//     console.log("hey");
-//     if(req.file){
-//         console.log(req.file);
-//         const file = {
-//             path: "/files/image/channel/" + req.file.filename,
-//         };
-//        Channel.findByIdAndUpdate(req.params.id, { channel_picture: file.path }).then(()=>{
-//             res.send(file);
-//        });
-//     }else{
-//         res.json({ error: true });
-//     }
-// });
+ router.post("/channel/:id/img", middleware.isLogedIn, upload.single("file"), (req, res)=>{
+     console.log("hey");
+     if(req.file){
+         console.log(req.file);
+         const file = {
+             path: "/files/image/channel/" + req.file.filename,
+         };
+        Channel.findByIdAndUpdate(req.params.id, { channel_picture: file.path }).then(()=>{
+             res.send(file);
+        });
+     }else{
+         res.json({ error: true });
+     }
+ });
 
 module.exports = router;
