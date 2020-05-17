@@ -19,6 +19,7 @@ const ajaxRoute      = require("./routes/ajax");
 const app            = express();
 const server         = http.createServer(app);
 const io             = socketIO(server);
+var cookieParser = require('cookie-parser')
 
 // Configure IO
 require("./io/index")(io);
@@ -30,6 +31,7 @@ app.use(express.static(__dirname + "/public"));
 var cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(cookieParser());
 app.use(cookieParser());
 app.set("view engine", "ejs");
 mongoose.Promise = global.Promise;
@@ -95,7 +97,9 @@ app.use((req, res, next)=>{
     next();
 });
 
-
+if (req.cookies.premium) {
+  return res.redirect("/premium");
+}
 // Routes
 app.use("/", indexRoute);
 app.use("/users", userRoute);
