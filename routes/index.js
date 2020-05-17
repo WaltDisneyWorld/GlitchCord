@@ -9,6 +9,8 @@ router.get("/", (req, res)=>{
         .catch((e)=>{
             console.log(e);
             return res.redirect("/users/login");
+          
+    
         });
     }else{
         res.redirect("/users/login");
