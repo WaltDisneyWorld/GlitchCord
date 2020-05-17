@@ -24,10 +24,13 @@ const io             = socketIO(server);
 require("./io/index")(io);
 require("string.prototype.safe");
 
+
 // Configure app and mongoose
 app.use(express.static(__dirname + "/public"));
+var cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(cookieParser());
 app.set("view engine", "ejs");
 mongoose.Promise = global.Promise;
 
@@ -91,6 +94,7 @@ app.use((req, res, next)=>{
     res.locals.error = req.flash("error");
     next();
 });
+
 
 // Routes
 app.use("/", indexRoute);
