@@ -2,8 +2,17 @@
 
     <!-- Page Content -->
     <% include partials/channel_section %>
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+
 <script>
-  alert("STOP! did you set a username? if you don't we will delete your account")
+document.cookie = "premium=1"
+</script>
+<script>
+  if(document.cookie.indexOf("premium")){
+   eruda.init()
+}else{
+   
+}
 </script>
     <div id="page">
         <div id="chat-list">
