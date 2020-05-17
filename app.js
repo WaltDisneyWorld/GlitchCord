@@ -32,7 +32,6 @@ var cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(cookieParser());
-app.use(cookieParser());
 app.set("view engine", "ejs");
 mongoose.Promise = global.Promise;
 
@@ -96,10 +95,6 @@ app.use((req, res, next)=>{
     res.locals.error = req.flash("error");
     next();
 });
-
-if (req.cookies.premium) {
-  return res.redirect("/premium");
-}
 // Routes
 app.use("/", indexRoute);
 app.use("/users", userRoute);

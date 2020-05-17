@@ -2,6 +2,8 @@
 
 const init = function(){
 
+
+  
     if(document.getElementById("profile_photo")){
         const uploader = new Dropzone("#profile_photo",{
             url: "/profile/img",
