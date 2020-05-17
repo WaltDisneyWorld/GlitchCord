@@ -1,6 +1,6 @@
 const   mongoose  = require("mongoose");
 const   validator = require("validator");
-// const   _         = require("lodash");
+const   _         = require("lodash");
 
  const userSchema = new mongoose.Schema({
     username: {
@@ -45,6 +45,10 @@ const   validator = require("validator");
         type: Boolean,
         default: false,
     },
+   premium: {
+     type: Boolean,
+     default: true,
+   }
 });
 
 // userSchema.plugin(passportLocalMongoose);

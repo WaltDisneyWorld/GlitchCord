@@ -1,5 +1,6 @@
 const { ObjectID } = require("mongodb");
 const Channel = require("../models/channel");
+const User = require("../models/user");
 
 const middleware = {};
 
@@ -10,6 +11,7 @@ middleware.isLogedIn = (req, res, next)=>{
         res.redirect("/users/login");
     }
 };
+
 
 middleware.isChannelParticipant = (req, res, next)=>{
     if(!ObjectID.isValid(req.params.id)){
