@@ -4,7 +4,7 @@ const { ObjectID } = require("mongodb");
 const User        = require("../models/user");
 const Message     = require("../models/message");
 const middleware  = require("../middleware/index");
-
+var cookieParser = require('cookie-parser')
 
 const     router = express.Router();
 
