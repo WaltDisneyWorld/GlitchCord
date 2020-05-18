@@ -1,4 +1,5 @@
 /* eslint-disable */
+var cookieParser = require('cookie-parser')
 
 const init = function(){
 
