@@ -1,1 +1,1 @@
-replaced with nothing
+# glitchchord, the free/open source discord alternative
