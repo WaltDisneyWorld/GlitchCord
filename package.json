@@ -33,7 +33,6 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
-    "pnpm": "^4.11.6",
     "req-flash": "0.0.3",
     "socket.io": "^2.2.0",
     "string.prototype.safe": "^1.0.0",
@@ -45,7 +44,6 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.16.0",
     "install": "^0.12.2",
-    "nodemon": "^1.18.9",
-    "npm": "^6.7.0"
+    "nodemon": "^1.18.9"
   }
 }
