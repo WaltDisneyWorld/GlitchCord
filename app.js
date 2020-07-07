@@ -101,5 +101,5 @@ app.use("/users", userRoute);
 app.use("/channel", channelRoute);
 app.use(ajaxRoute);
 app.get('*', function(req, res){
-    res.status(404).send('<body style="background-color:black;"><center><a href="https://http.cat"><img src="https://http.cat/404"></a><p>you look a bit lost! <a onclick="window.history.back();"</center>');
-});
+    res.status(404).send('<body style="background-color:black;"><center><a href="https://http.cat"><img src="https://http.cat/404"></a></center>');
+  });
