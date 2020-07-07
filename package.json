@@ -37,7 +37,8 @@
     "socket.io": "^2.2.0",
     "string.prototype.safe": "^1.0.0",
     "string.prototype.startswith": "^0.2.0",
-    "validator": "^10.11.0"
+    "validator": "^10.11.0",
+    "markdown-it": "^11.0.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
