@@ -6,12 +6,12 @@ module.exports = io => {
 
     socket.on("join", (params, callback) => {
       socket.join(params.channelID);
-      callback();
+      if (typeof callback === "function") callback();
     });
 
     socket.on("createdMessage", (data, callback) => {
       saveMessage(io, data);
-      callback();
+      if (typeof callback === "function") callback();
     });
 
     socket.on("disconnect", () => {

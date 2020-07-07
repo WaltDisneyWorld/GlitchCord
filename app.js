@@ -37,7 +37,7 @@ mongoose.Promise = global.Promise;
 
 
 // boot if db is available
-mongoose.connect(config.dbURL, { reconnectTries: 10 })
+mongoose.connect(config.dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=>{
         // boot
         server.listen(config.port, ()=>{

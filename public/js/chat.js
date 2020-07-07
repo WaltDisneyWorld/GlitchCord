@@ -4,13 +4,15 @@ const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
 
 const commands = {
-  shrug: args => socket.emit("newMessage", { userID, channelID, message: "¯\_(ツ)_/¯" }),
+  shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
+  dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
       <a href="#">System</div>
       <div class="chat-message-message">
         <p><code>/shrug</code> - Send a shrug face in the chat.</p>
+        <p><code>/dog</code> - Send a dog face in the chat.</p>
       </div>
     `);
     jQuery("#mCSB_2_container").append(div);
@@ -40,7 +42,7 @@ function renderError (msg)
 {
   const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
-      <a href="#">System</div>
+      <a href="#">Bonnie</div>
       <div class="chat-message-message">
         <p style="color: red !important">${msg}</p>
       </div>
@@ -60,6 +62,7 @@ jQuery("#message-form").on("submit", function(e) {
   
   if (message.startsWith("/"))
   {
+    messageTextBox.val(" ");
     const args = message.substring(1, message.length).trim().split(/\s/g);
     const command = args.shift();
     if (!command) return renderError("Missing command input!");
