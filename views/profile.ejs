@@ -21,15 +21,12 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="row valign">
                             <div class="col-md-6">
-                                <h6 class="text-bold mb-25">Friend List</h6>
+                                <h6 class="text-bold mb-25">Account information reciept</h6>
                                 <div class="friend-list scroll-hijack">
                                     <ul class="list">
-                                        <li><a href="#"><div class="avatar"><img class="little_avatar" src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random5884</a></li>
-                                        <li><a href="#"><div class="avatar"><img class="little_avatar" src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random3858</a></li>
-                                        <li><a href="#"><div class="avatar"><img class="little_avatar" src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random2381</a></li>
-                                        <li><a href="#"><div class="avatar"><img class="little_avatar" src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random3858</a></li>
-                                        <li><a href="#"><div class="avatar"><img class="little_avatar" src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random2381</a></li>
-                                        <li><a href="#"><div class="avatar"><img class="little_avatar" src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random2948</a></li>
+                                      <li>your username is <b><%= currentUser.username %></b></li>
+                                      <li>your email is <b><%= currentUser.email %></b></li>
+                                      <li></li>
                                     </ul>
                                 </div>
                                 <h6 class="text-bold mt-25">invite code list</h6>
@@ -53,7 +50,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="profile_email">Email</label>
-                                        <input type="email" name="user[email]" disabled id="profile_email" class="form-control" value="<%= currentUser.email %>" />
+                                        <input type="email" name="user[email]" id="profile_email" class="form-control" value="<%= currentUser.email %>" />
                                     </div>
                                     <div class="form-group">
                                         <label for="profile_username">Username</label>
@@ -61,7 +58,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="profile_password">Password</label>
-                                        <input type="password" name="profile_password" disabled id="profile_password" class="form-control" value="johndoe" />
+                                        <input type="password" name="profile_password" id="profile_password" class="form-control" value="johndoe" />
                                     </div>
                                     <div class="form-group">
                                         <label for="profile_c_password">Confirm Password</label>
