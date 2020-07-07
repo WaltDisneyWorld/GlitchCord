@@ -9,8 +9,7 @@
 
 <script>console.log('xss')</script>.safe()
 <script>// eruda.init();</script>
-
-    <div id="page">
+      <div id="page">
         <div id="chat-list">
             <a href="/users/@me" class="user"><div class="avatar"><img src="<%= currentUser.profile_picture %>" /></div><%= currentUser.username %></a>
             <ul class="chat-list scroll-hijack">
@@ -31,15 +30,6 @@
               <i class="fas fa-video"></i>
             </button>
           </a>
-            <button class="btn btn-primary btn-radius">
-              <div class="dropup">
-              <div class="dropup-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-            </div>
-           </button>
       </center>
         </div>
         </div>
