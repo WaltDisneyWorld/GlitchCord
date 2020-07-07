@@ -103,3 +103,4 @@ app.use(ajaxRoute);
 app.get('*', function(req, res){
     res.status(404).send('<body style="background-color:black;"><center><a href="https://http.cat"><img src="https://http.cat/404"></a></center>');
   });
+
