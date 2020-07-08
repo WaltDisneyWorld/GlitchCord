@@ -6,7 +6,7 @@ const username = $("#chat-list a");
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
-  colour: args => ,
+  tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
@@ -14,7 +14,9 @@ const commands = {
       <div class="chat-message-message">
         <p><code>/shrug</code> - Send a shrug face in the chat.</p>
         <p><code>/dog</code> - Send a dog face in the chat.</p>
-      </div>
+        <p><code>/tableflip</code> - Show your anger, flip a table.</p>
+                 
+</div>
     `);
     jQuery("#mCSB_2_container").append(div);
     scrollToBottom();
