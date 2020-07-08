@@ -6,7 +6,9 @@ const username = $("#chat-list a");
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
-  disconnect: args => socket.disconnect(),
+  disconnect: args => kickClient = function(client) { this.socket.emit('kick', client); }
+};
+                                                    
   
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
@@ -140,6 +142,17 @@ function scrollToBottom() {
   }
 }
 
+function handleClientKick(socket) {
+  socket.on('kick', function(client) {
+    if (typeof io.sockets.sockets[client] != 'undefined') {
+      socket.emit('message', {text: nickNames[socket.id] + ' kicked: ' + nickNames[client]});
+      io.sockets.sockets[client].disconnect();
+    } else {
+      socket.emit('message', {text: 'User: ' + name + ' does not exist.'});
+    }
+  });
+}
+
 (function fetchOnlineUser() {
   $.get("/current/channel/" + channelID).done(function(data) {
     chatList.html("");
@@ -159,5 +172,5 @@ function scrollToBottom() {
       }
     });
   });
-  setTimeout(fetchOnlineUser, 30000);
+  setTimeout(fetchOnlineUser, 30000)
 })();
