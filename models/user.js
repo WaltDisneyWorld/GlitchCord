@@ -22,6 +22,7 @@ const   _         = require("lodash");
         type: String,
         minlength: 6,
         required: true,
+        unique: true,
     },
     channels: [{
         type: mongoose.Schema.Types.ObjectId,
