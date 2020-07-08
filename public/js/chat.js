@@ -6,9 +6,6 @@ const username = $("#chat-list a");
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
-};
-                                                    
-  
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
@@ -20,7 +17,6 @@ const commands = {
     `);
     jQuery("#mCSB_2_container").append(div);
     scrollToBottom();
-  }
 
 socket.on("connect", function() {
   console.log("Connected");
@@ -86,6 +82,7 @@ jQuery("#message-form").on("submit", function(e) {
 
 socket.on("newMessage", function(message) {
   const formatedTime = moment(message.created_at).format("lll");
+  scrollToBottom();
 
   const div = jQuery("<div class='chat-message'></div>");
   div.html(`
