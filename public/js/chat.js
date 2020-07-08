@@ -6,6 +6,7 @@ const username = $("#chat-list a");
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
+  leave: args => location.replace("/users/@me"),
   tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
@@ -15,6 +16,7 @@ const commands = {
         <p><code>/shrug</code> - Send a shrug face in the chat.</p>
         <p><code>/dog</code> - Send a dog face in the chat.</p>
         <p><code>/tableflip</code> - Show your anger, flip a table.</p>
+        <p><code>/leave</code> - Leave the current session</p>
                  
 </div>
     `);
