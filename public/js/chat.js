@@ -6,6 +6,8 @@ const username = $("#chat-list a");
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
+  disconnect: args => socket.disconnect(),
+  
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
@@ -105,9 +107,6 @@ socket.on("disconnect", function() {
   console.log("Disconnected to server");
 });
 
-socket.on('forceDisconnect', function(){
-    socket.disconnect();
-});
 
 // if User is looking at previous message we should not scroll down -- not yet implemented
 function scrollToBottom() {
