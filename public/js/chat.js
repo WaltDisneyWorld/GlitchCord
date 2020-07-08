@@ -162,4 +162,16 @@ function scrollToBottom() {
   setTimeout(fetchOnlineUser, 30000);
   const $li = $('<li>').text(msg);
 $('#messages').append($li);
+  
+socket.on('started typing', function(username) {
+
+    //Send message that the user has started to type
+    socket.broadcast.emit('start user typing', username);
+  });
+
+  //On user stopped typing
+  socket.on('stopped typing', function(username) {
+    socket.broadcast.emit('stop user typing', username);
+  });
+
 })
