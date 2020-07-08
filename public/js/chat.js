@@ -160,7 +160,13 @@ function scrollToBottom() {
   const $li = $('<li>').text(msg);
 $('#messages').append($li);
 
+
+
 $('html, body').animate({
    scrollTop: $li.offset().top
 }, 2000); // change the animation delay to whatever you like
+window.setInterval(function() {
+  var elem = document.getElementById('chat-body');
+  elem.scrollTop = elem.scrollHeight;
+}, 10000000);
 })();
