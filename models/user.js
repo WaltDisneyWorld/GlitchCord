@@ -6,6 +6,7 @@ const   _         = require("lodash");
     username: {
         type: String,
         unique: false,
+        minlength: 1,
     },
     email: {
         type: String,
