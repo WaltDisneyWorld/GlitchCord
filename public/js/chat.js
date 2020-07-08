@@ -157,4 +157,10 @@ function scrollToBottom() {
     });
   });
   setTimeout(fetchOnlineUser, 30000);
+  const $li = $('<li>').text(msg);
+$('#messages').append($li);
+
+$('html, body').animate({
+   scrollTop: $li.offset().top
+}, 2000); // change the animation delay to whatever you like
 })();
