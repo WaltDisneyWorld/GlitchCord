@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+console.log = function() {}
 //Custom Scroll Bar
 (function ($) {
     $(window).on("load", function () {
