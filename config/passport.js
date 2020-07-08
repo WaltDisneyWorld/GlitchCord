@@ -1,7 +1,7 @@
 const bcrypt         = require("bcryptjs");
 const User           = require("../models/user");
 
-const  localSignupStrategy = (req, username, email, password, done)=>{
+const  localSignupStrategy = (req, email, password, username, done)=>{
     if(email){
       email = email.toLowerCase(); // Use lower-case e-mails to avoid case-sensitive e-mail matching
     }
