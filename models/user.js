@@ -45,10 +45,6 @@ const   _         = require("lodash");
         type: Boolean,
         default: false,
     },
-   premium: {
-     type: Boolean,
-     default: true,
-   }
 });
 
 // userSchema.plugin(passportLocalMongoose);
