@@ -6,7 +6,6 @@ const username = $("#chat-list a");
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
-  disconnect: args => kickClient = function(client) { this.socket.emit('kick', client); }
 };
                                                     
   
@@ -22,7 +21,6 @@ const commands = {
     jQuery("#mCSB_2_container").append(div);
     scrollToBottom();
   }
-};
 
 socket.on("connect", function() {
   console.log("Connected");
@@ -140,17 +138,6 @@ function scrollToBottom() {
     console.log("scroll");
     element.mCustomScrollbar("scrollTo", "bottom");
   }
-}
-
-function handleClientKick(socket) {
-  socket.on('kick', function(client) {
-    if (typeof io.sockets.sockets[client] != 'undefined') {
-      socket.emit('message', {text: nickNames[socket.id] + ' kicked: ' + nickNames[client]});
-      io.sockets.sockets[client].disconnect();
-    } else {
-      socket.emit('message', {text: 'User: ' + name + ' does not exist.'});
-    }
-  });
 }
 
 (function fetchOnlineUser() {
