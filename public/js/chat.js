@@ -156,7 +156,7 @@ function scrollToBottom() {
       }
     });
   });
-  setTimeout(fetchOnlineUser, 30000);
+  setTimeout(fetchOnlineUser, 999999999999999);
   const $li = $('<li>').text(msg);
 $('#messages').append($li);
 })
