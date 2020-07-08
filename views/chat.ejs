@@ -42,6 +42,7 @@
             <div class="chat-body scroll-hijack">
                     <% channel.message.forEach(function(message){ %>
                         <div class="chat-message">
+                                <div class="avatar"><img src="<%= message.author.profile_picture %>" /></div>
                                 <div class="chat-message-content">
                                     <a href="/users/<%= message.author._id %>" class="chat-message-author"><%= message.author.username %></a>
                                     <span class="chat-message-date"><%= moment(message.created_at).format("lll")  %></span>
