@@ -9,7 +9,7 @@ const commands = {
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
-      <a href="#">System</div>
+      <a href="#">Bonnie</div>
       <div class="chat-message-message">
         <p><code>/shrug</code> - Send a shrug face in the chat.</p>
         <p><code>/dog</code> - Send a dog face in the chat.</p>
@@ -103,6 +103,10 @@ socket.on("newMessage", function(message) {
 
 socket.on("disconnect", function() {
   console.log("Disconnected to server");
+});
+
+socket.on('forceDisconnect', function(){
+    socket.disconnect();
 });
 
 // if User is looking at previous message we should not scroll down -- not yet implemented
