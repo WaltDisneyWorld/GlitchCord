@@ -62,7 +62,6 @@ router.post("/profile/img", middleware.isLogedIn, upload.single("file"), (req, r
 
 // Set the channel picture
  router.post("/channel/:id/img", middleware.isLogedIn, upload.single("file"), (req, res)=>{
-     console.log("hey");
      if(req.file){
          console.log(req.file);
          const file = {
