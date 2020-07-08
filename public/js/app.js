@@ -215,21 +215,21 @@ $(function () {
         var $this = $(this),
             $target = $this.data('target');
 
-        // if ($($target).hasClass('modal-open')) {
-        //     $('.modal-block').removeClass('modal-block-open');
-        //     a = setTimeout(function () {
-        //         $('.modal-block-wrap').removeClass('modal-open');
-        //     }, 300);
-        //     $body.removeClass('modal-is-open');
-        // } else {
-        //     clearTimeout(a);
-        //
-        //     $($target).addClass('modal-open');
-        //     a = setTimeout(function () {
-        //         $($target).find('.modal-block').addClass('modal-block-open');
-        //     }, 50);
-        //     $body.addClass('modal-is-open');
-        // }
+         if ($($target).hasClass('modal-open')) {
+             $('.modal-block').removeClass('modal-block-open');
+             a = setTimeout(function () {
+                 $('.modal-block-wrap').removeClass('modal-open');
+             }, 300);
+             $body.removeClass('modal-is-open');
+         } else {
+             clearTimeout(a);
+        
+             $($target).addClass('modal-open');
+             a = setTimeout(function () {
+                 $($target).find('.modal-block').addClass('modal-block-open');
+             }, 50);
+             $body.addClass('modal-is-open');
+         }
 
         if ($body.hasClass('modal-is-open')) {
             $('.modal-block').removeClass('modal-block-open');
