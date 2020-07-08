@@ -3,8 +3,6 @@ const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
 
-io.set('log level', 0);
-
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
