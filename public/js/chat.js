@@ -9,7 +9,7 @@ const commands = {
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
-      <a href="#">Bonnie</div>
+      <a href="#">System</div>
       <div class="chat-message-message">
         <p><code>/shrug</code> - Send a shrug face in the chat.</p>
         <p><code>/dog</code> - Send a dog face in the chat.</p>
@@ -17,6 +17,8 @@ const commands = {
     `);
     jQuery("#mCSB_2_container").append(div);
     scrollToBottom();
+  }
+};
 
 socket.on("connect", function() {
   console.log("Connected");
@@ -82,7 +84,6 @@ jQuery("#message-form").on("submit", function(e) {
 
 socket.on("newMessage", function(message) {
   const formatedTime = moment(message.created_at).format("lll");
-  scrollToBottom();
 
   const div = jQuery("<div class='chat-message'></div>");
   div.html(`
@@ -103,7 +104,6 @@ socket.on("newMessage", function(message) {
 socket.on("disconnect", function() {
   console.log("Disconnected to server");
 });
-
 
 // if User is looking at previous message we should not scroll down -- not yet implemented
 function scrollToBottom() {
@@ -156,5 +156,5 @@ function scrollToBottom() {
       }
     });
   });
-  setTimeout(fetchOnlineUser, 30000)
+  setTimeout(fetchOnlineUser, 30000);
 })();
