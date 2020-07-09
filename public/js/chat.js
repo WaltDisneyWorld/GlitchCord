@@ -20,10 +20,10 @@ function isSiteOnline() {
 
               //check to see whether request for the file failed or succeeded
               if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
-                socket.emit("createdMessage", { userID, channelID, message: "pong! site is up!" })
+                socket.emit("createdMessage", { userID, channelID, message: "🏓 pong! site is up!" })
                 
               } else {
-                socket.emit("createdMessage", { userID, channelID, message: ":( ,site down contact admin!!!" })
+                socket.emit("createdMessage", { userID, channelID, message: "x( ,site down contact admin!!!" })
                 return;
 
               }
