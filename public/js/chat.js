@@ -20,12 +20,10 @@ function isSiteOnline() {
 
               //check to see whether request for the file failed or succeeded
               if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
-                socket.emit("createdMessage", { channelID, message: "Website/socket connections: up" })
-                socket.emit("createdMessage", { userID, channelID, message: "Database: up" })
-
+                socket.emit("createdMessage", { userID, channelID, message: "pong! site is up!" })
                 
               } else {
-                socket.emit("createdMessage", { userID, channelID, message: "page down" })
+                socket.emit("createdMessage", { userID, channelID, message: ":( ,site down contact admin!!!" })
                 return;
 
               }
@@ -41,7 +39,7 @@ const commands = {
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
   leave: args => location.replace("/users/@me"),
   tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
-  status: args => isSiteOnline(),
+  ping: args => isSiteOnline(),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
