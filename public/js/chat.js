@@ -49,6 +49,7 @@ const commands = {
         <p><code>/dog</code> - Send a dog face in the chat.</p>
         <p><code>/tableflip</code> - Show your anger, flip a table.</p>
         <p><code>/leave</code> - Leave the current session</p>
+        <p><code>/ping</code> - Am I alive!??</p>
                  
 </div>
     `);
