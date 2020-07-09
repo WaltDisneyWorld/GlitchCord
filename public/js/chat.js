@@ -62,6 +62,7 @@ const commands = {
 
 socket.on("connect", function() {
   console.log("Connected");
+  socket.emit("message", {userID, channelID, message:""})
 
   const params = {
     channelID,
