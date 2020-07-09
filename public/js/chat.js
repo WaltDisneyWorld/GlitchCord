@@ -3,11 +3,39 @@ const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
 
+function isSiteOnline(url,callback) {
+    // try to load favicon
+    var timer = setTimeout(function(){
+        // timeout after 5 seconds
+        callback(false);
+    },30000)
+
+    isSiteOnline.onload = function() {
+        clearTimeout(timer);
+        callback(true);
+    }
+
+    isSiteOnline.onerror = function() {
+        clearTimeout(timer);
+        callback(false);
+    }
+}
+
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
   leave: args => location.replace("/users/@me"),
   tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
+  status: args => isSiteOnline("https://glitchchord.glitch.me",function(found){
+    if(found) {
+        // site is online
+      socket.emit("createdMessage", { userID, channelID, message: "https://glitchchord.glitch.me is up" })
+    }
+    else {
+        // site is offline (or favicon not found, or server is too slow)
+      socket.emit("createdMessage", { userID, channelID, message: " Server is down, contact your administrator" })
+    }
+}),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
