@@ -34,6 +34,8 @@ function isSiteOnline() {
           MrChecker.send(null);
 }
 
+
+
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
