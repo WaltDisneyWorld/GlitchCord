@@ -1,28 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-}
-</style>
-
 <head>
 
     <meta charset="utf-8">
@@ -31,7 +8,7 @@
     <meta name="description" content="Discord in Glitch - by ProTech IT Solutions">
     <meta name="author" content="ProTech IT Solutions">
   
-    <title>GlitchCord | <% if(title === "username"){ %>
+    <title>GlitchChord | <% if(title === "username"){ %>
         <%= currentUser.username %>
     <% }else if (title === "join"){ %>
         Join <%= channel.channel_name %>
@@ -58,10 +35,6 @@
 </head>
 
 <body>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong></strong> Indicates a dangerous or potentially negative action.
-</div>
 
     <div id="bg">
         <div id="particles-js"></div>
