@@ -36,10 +36,6 @@ router.post("/register", passport.authenticate("local-signup", {
        res.redirect("/users/@me");
 });
 
-router.get("/offline", (req, res)): {
-        
-}
-
 router.get("/logout", middleware.isLogedIn, (req, res)=>{
     User.findById(req.user._id).then((rUser)=>{
         rUser.online = false;
@@ -47,7 +43,7 @@ router.get("/logout", middleware.isLogedIn, (req, res)=>{
        });
     req.logout();
     res.redirect("/");
-});
+})
 
 
 // Users Profile
