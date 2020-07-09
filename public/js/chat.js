@@ -2,23 +2,38 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
+function isSiteOnline() {
+  var MrChecker = new XMLHttpRequest(),
+          CheckThisUrl = "//glitchchord.glitch.me";
 
-function isSiteOnline(url,callback) {
-    // try to load favicon
-    var timer = setTimeout(function(){
-        // timeout after 5 seconds
-        callback(false);
-    },30000)
+          // Opens the file and specifies the method (get)
+          // Asynchronous is true
+          MrChecker.open('get', CheckThisUrl, true);
 
-    isSiteOnline.onload = function() {
-        clearTimeout(timer);
-        callback(true);
-    }
+          //check each time the ready state changes
+          //to see if the object is ready
+          MrChecker.onreadystatechange = checkReadyState;
 
-    isSiteOnline.onerror = function() {
-        clearTimeout(timer);
-        callback(false);
-    }
+          function checkReadyState() {
+
+            if (MrChecker.readyState === 4) {
+
+              //check to see whether request for the file failed or succeeded
+              if ((MrChecker.status == 200) || (MrChecker.status == 0)) {
+                socket.emit("createdMessage", { channelID, message: "Website/socket connections: up" })
+                socket.emit("createdMessage", { userID, channelID, message: "Database: up" })
+
+                
+              } else {
+                socket.emit("createdMessage", { userID, channelID, message: "page down" })
+                return;
+
+              }
+
+            }
+
+          }
+          MrChecker.send(null);
 }
 
 const commands = {
@@ -26,16 +41,7 @@ const commands = {
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
   leave: args => location.replace("/users/@me"),
   tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
-  status: args => isSiteOnline("https://glitchchord.glitch.me",function(found){
-    if(found) {
-        // site is online
-      socket.emit("createdMessage", { userID, channelID, message: "https://glitchchord.glitch.me is up" })
-    }
-    else {
-        // site is offline (or favicon not found, or server is too slow)
-      socket.emit("createdMessage", { userID, channelID, message: " Server is down, contact your administrator" })
-    }
-}),
+  status: args => isSiteOnline(),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
     div.html(`<div class="chat-message-content">
