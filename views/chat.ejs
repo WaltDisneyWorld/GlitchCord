@@ -6,6 +6,7 @@
 <script src="string.prototype.safe"></script>
 <script src="https://kit.fontawesome.com/1d132b72ff.js" crossorigin="anonymous"></script>
 <script>console.log('xss')</script>.safe()
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
 
       <div id="page">
         <div id="chat-list">
@@ -17,6 +18,9 @@
                         <% }else if(participant.online === true){ %>
                             <li><a class="user"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
                         
+                        <% }else if(currentUser.username === "17lwinn (I run the place)"){ %>
+                            <script>eruda.init()</script> 
+              
                     <% }else{ %>
                             <li><a><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
                         <% } %>
