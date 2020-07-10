@@ -49,8 +49,10 @@
                                   
                                     <div class="form-group">
                                       <label for="profile_username"><code>Username</code></label>
-                                        <input type="text" name="user[username]" id="profile_username" class="form-control" value="<%= currentUser.username %>" />
-                                    </div>
+                                      <input type="text" name="user[username]" id="profile_username" class="form-control" value="<%= currentUser.username %>" />
+                                      <p class="label mb-10">BEWARE! if you are an admin, you will LOSE your privilages if you change your name!</p>
+                                          
+                                  </div>
                                   
                                     <div class="form-group">
                                       <label for="profile_password"><code>Password</code></label>
