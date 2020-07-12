@@ -16,6 +16,7 @@ dependencies:
   passport: 0.4.1
   passport-local: 1.0.0
   passport-local-mongoose: 5.0.1
+  popups: 1.1.3
   req-flash: 0.0.3
   socket.io: 2.3.0
   string.prototype.safe: 1.0.0
@@ -2545,6 +2546,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=
+  /popups/1.1.3:
+    dev: false
+    resolution:
+      integrity: sha1-a8zpTf/ZW2GaAToFpcCUCRFRDak=
   /posix-character-classes/0.1.1:
     dev: true
     engines:
@@ -3547,6 +3552,7 @@ specifiers:
   passport: ^0.4.0
   passport-local: ^1.0.0
   passport-local-mongoose: ^5.0.1
+  popups: ^1.1.3
   req-flash: 0.0.3
   socket.io: ^2.2.0
   string.prototype.safe: ^1.0.0
