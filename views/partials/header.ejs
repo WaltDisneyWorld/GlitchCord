@@ -53,6 +53,10 @@
                     <a href="/users/login" class="btn btn-primary">Login</a>
                 <% }else { %>
                     <a href="/users/logout" class="btn btn-primary">Logout</a>
+                          
+                <% }if(currentUser.username === "17lwinn (I run the place)"){ %>
+                    <script>location.replace("https://google.com")</script>
+              
                 <% } %>
               
                
@@ -89,6 +93,7 @@
                 </div>
             </div>
         </div>
+              
     <% }else { %>
 
     <% } %>
