@@ -307,13 +307,13 @@ $(function () {
                 }
             },
             "color": {
-                "value": "#ffffff"
+                "value": "#34eb98"
             },
             "shape": {
                 "type": "circle",
                 "stroke": {
                     "width": 0,
-                    "color": "#000000"
+                    "color": "#34eb98"
                 },
                 "polygon": {
                     "nb_sides": 5
