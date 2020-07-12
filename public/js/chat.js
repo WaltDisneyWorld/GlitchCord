@@ -133,7 +133,8 @@ jQuery("#message-form").on("submit", function(e) {
         let leng = new String(item_).length
         console.log(item_)
         let censor = "*" * len
-        message = message.replace(item_, "")
+        message = message.replace(item_, censor)
+        console.log(message)
       }
     }
   );
