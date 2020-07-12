@@ -122,22 +122,6 @@ jQuery("#message-form").on("submit", function(e) {
     commands[command](args);
     return;
   }
-  let item_ = "",
-      len = 0,
-      censor = ""
-  $.getJSON(
-    "https://raw.githubusercontent.com/LDNOOBW/naughty-words-js/master/en.json",
-    function(di) {
-      for(const num of di){
-        let item_ = di[num];
-        let leng = new String(item_).length
-        console.log(item_)
-        let censor = "*" * len
-        message = message.replace(item_, censor)
-        console.log(message)
-      }
-    }
-  );
   var data = {
     userID,
     channelID: channelID,
