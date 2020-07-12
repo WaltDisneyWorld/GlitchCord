@@ -1,5 +1,4 @@
 dependencies:
-  bad-words: 3.0.3
   bcryptjs: 2.4.3
   body-parser: 1.19.0
   cookie-parser: 1.4.5
@@ -13,6 +12,7 @@ dependencies:
   mongodb: 3.5.9
   mongoose: 5.9.20
   multer: 1.4.2
+  naughty-words: 1.1.0
   passport: 0.4.1
   passport-local: 1.0.0
   passport-local-mongoose: 5.0.1
@@ -223,18 +223,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-MasayLEpNjRj41s+u2n038+6eUc=
-  /bad-words/3.0.3:
-    dependencies:
-      badwords-list: 1.0.0
-    dev: false
-    engines:
-      node: '>=8.0.0'
-    resolution:
-      integrity: sha512-To+nGz+U8SpEQieZ2kSadY/1hVO88UXAslCJuTgLjDOuGrs/tNW2BYwl0fctxcRLooe0nzYN1pGzgvRIrd0BeA==
-  /badwords-list/1.0.0:
-    dev: false
-    resolution:
-      integrity: sha1-XphW2/E0gqKVw7CzBK+51M/FxXk=
   /balanced-match/1.0.0:
     dev: true
     resolution:
@@ -2161,6 +2149,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
+  /naughty-words/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-pZuE07GHsUzTb2hQj4B3DLWPRIB4IDKfFdI4qfj7YF8WQtaXYSxlqEns+tUzwxJ8cRmfqVSePHlvnZiP4ytSMg==
   /negotiator/0.6.2:
     dev: false
     engines:
@@ -3510,7 +3502,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  bad-words: ^3.0.3
   bcryptjs: ^2.4.3
   body-parser: ^1.19.0
   cookie-parser: ^1.4.3
@@ -3528,6 +3519,7 @@ specifiers:
   mongodb: ^3.1.13
   mongoose: ^5.5.4
   multer: ^1.4.1
+  naughty-words: ^1.1.0
   nodemon: ^1.18.9
   passport: ^0.4.0
   passport-local: ^1.0.0

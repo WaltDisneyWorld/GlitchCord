@@ -153,7 +153,7 @@ function scrollToBottom() {
   var chatbody = jQuery("#mCSB_2");
   var newMessage = messagesContainer.children().last();
 
-  // // // Heights
+  // // // Heights for stuff
   var clientHeight = messagesContainer.prop("clientHeight");
   var scrollTop = messagesContainer.prop("scrollTop");
   var scrollHeight = messagesContainer.prop("scrollHeight");
@@ -196,7 +196,7 @@ function scrollToBottom() {
       }
     });
   });
-  setTimeout(fetchOnlineUser, 30000);
+  setTimeout(fetchOnlineUser, 3000);
   const $li = $('<li>').text(msg);
 $('#messages').append($li);
 })
