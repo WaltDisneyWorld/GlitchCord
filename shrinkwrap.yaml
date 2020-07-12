@@ -1,4 +1,5 @@
 dependencies:
+  bad-words: 3.0.3
   bcryptjs: 2.4.3
   body-parser: 1.19.0
   cookie-parser: 1.4.5
@@ -6,7 +7,6 @@ dependencies:
   express: 4.17.1
   express-session: 1.17.1
   lodash: 4.17.15
-  markdown-it: 11.0.0
   method-override: 3.0.0
   mime-types: 2.1.27
   moment: 2.27.0
@@ -16,7 +16,6 @@ dependencies:
   passport: 0.4.1
   passport-local: 1.0.0
   passport-local-mongoose: 5.0.1
-  popups: 1.1.3
   req-flash: 0.0.3
   socket.io: 2.3.0
   string.prototype.safe: 1.0.0
@@ -139,6 +138,7 @@ packages:
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
+    dev: true
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   /arr-diff/4.0.0:
@@ -223,6 +223,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-MasayLEpNjRj41s+u2n038+6eUc=
+  /bad-words/3.0.3:
+    dependencies:
+      badwords-list: 1.0.0
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    resolution:
+      integrity: sha512-To+nGz+U8SpEQieZ2kSadY/1hVO88UXAslCJuTgLjDOuGrs/tNW2BYwl0fctxcRLooe0nzYN1pGzgvRIrd0BeA==
+  /badwords-list/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-XphW2/E0gqKVw7CzBK+51M/FxXk=
   /balanced-match/1.0.0:
     dev: true
     resolution:
@@ -819,10 +831,6 @@ packages:
       node: '>=8.0.0'
     resolution:
       integrity: sha512-b4Q85dFkGw+TqgytGPrGgACRUhsdKc9S9ErRAXpPGy/CXKs4tYoHDkvIRdsseAF7NjfVwjRFIn6KTnbw7LwJZg==
-  /entities/2.0.3:
-    dev: false
-    resolution:
-      integrity: sha512-MyoZ0jgnLvB2X3Lg5HqpFmn1kybDiIfEQmKzTb5apr51Rb+T3KdmMiqa70T+bhGnyv7bQ6WMj2QMHpGMmlrUYQ==
   /error-ex/1.3.2:
     dependencies:
       is-arrayish: 0.2.1
@@ -1876,12 +1884,6 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-OwmSTt+fCDwEkP3UwLxEIeBHZO4=
-  /linkify-it/3.0.2:
-    dependencies:
-      uc.micro: 1.0.6
-    dev: false
-    resolution:
-      integrity: sha512-gDBO4aHNZS6coiZCKVhSNh43F9ioIL4JwRjLZPkoLIY4yZFwg264Y5lu2x6rb1Js42Gh6Yqm2f6L2AJcnkzinQ==
   /load-json-file/2.0.0:
     dependencies:
       graceful-fs: 4.2.4
@@ -1940,21 +1942,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
-  /markdown-it/11.0.0:
-    dependencies:
-      argparse: 1.0.10
-      entities: 2.0.3
-      linkify-it: 3.0.2
-      mdurl: 1.0.1
-      uc.micro: 1.0.6
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-+CvOnmbSubmQFSA9dKz1BRiaSMV7rhexl3sngKqFyXSagoA3fBdJQ8oZWtRy2knXdpDXaBw44euz37DeJQ9asg==
-  /mdurl/1.0.1:
-    dev: false
-    resolution:
-      integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -2546,10 +2533,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=
-  /popups/1.1.3:
-    dev: false
-    resolution:
-      integrity: sha1-a8zpTf/ZW2GaAToFpcCUCRFRDak=
   /posix-character-classes/0.1.1:
     dev: true
     engines:
@@ -3075,6 +3058,7 @@ packages:
     resolution:
       integrity: sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
   /sprintf-js/1.0.3:
+    dev: true
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /static-extend/0.1.2:
@@ -3310,10 +3294,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /uc.micro/1.0.6:
-    dev: false
-    resolution:
-      integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
   /uid-safe/2.1.5:
     dependencies:
       random-bytes: 1.0.0
@@ -3530,6 +3510,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  bad-words: ^3.0.3
   bcryptjs: ^2.4.3
   body-parser: ^1.19.0
   cookie-parser: ^1.4.3
@@ -3541,7 +3522,6 @@ specifiers:
   express-session: ^1.15.6
   install: ^0.12.2
   lodash: ^4.17.11
-  markdown-it: ^11.0.0
   method-override: ^3.0.0
   mime-types: ^2.1.24
   moment: ^2.24.0
@@ -3552,7 +3532,6 @@ specifiers:
   passport: ^0.4.0
   passport-local: ^1.0.0
   passport-local-mongoose: ^5.0.1
-  popups: ^1.1.3
   req-flash: 0.0.3
   socket.io: ^2.2.0
   string.prototype.safe: ^1.0.0

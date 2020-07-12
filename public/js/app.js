@@ -358,7 +358,7 @@ $(function () {
                 "random": true,
                 "straight": false,
                 "out_mode": "out",
-                "bounce": false,
+                "bounce": true,
                 "attract": {
                     "enable": false,
                     "rotateX": 600,
@@ -388,7 +388,7 @@ $(function () {
                 },
                 "bubble": {
                     "distance": 83.91608391608392,
-                    "size": 1,
+                    "size": 4,
                     "duration": 3,
                     "opacity": 1,
                     "speed": 3
