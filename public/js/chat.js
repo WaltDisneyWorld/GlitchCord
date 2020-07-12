@@ -122,14 +122,18 @@ jQuery("#message-form").on("submit", function(e) {
     commands[command](args);
     return;
   }
+  let item_ = "",
+      len = 0,
+      censor = ""
   $.getJSON(
     "https://raw.githubusercontent.com/LDNOOBW/naughty-words-js/master/en.json",
     function(di) {
       for(const num of di){
-        let item = di[num];
-        let len = item.length;
+        let item_ = di[num];
+        let leng = new String(item_).length
+        console.log(item_)
         let censor = "*" * len
-        if (message)
+        message = message.replace(item_, "")
       }
     }
   );
