@@ -48,6 +48,10 @@ const   _         = require("lodash");
         type: Boolean,
         default: false,
     },
+   delete: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 // userSchema.plugin(passportLocalMongoose);

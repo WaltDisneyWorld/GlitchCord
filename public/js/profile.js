@@ -2,7 +2,6 @@
 
 const init = function(){
 
-
   
     if(document.getElementById("profile_photo")){
         const uploader = new Dropzone("#profile_photo",{
@@ -38,3 +37,7 @@ const init = function(){
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+function deleteacc(){
+  
+}
