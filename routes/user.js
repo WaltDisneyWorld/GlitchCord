@@ -4,7 +4,6 @@ const { ObjectID } = require("mongodb");
 const User        = require("../models/user");
 const Message     = require("../models/message");
 const middleware  = require("../middleware/index");
-const popups = require("")
 
 
 const     router = express.Router();
@@ -15,6 +14,7 @@ router.get("/login", (req, res)=>{
 
 router.post("/login", passport.authenticate("local-login", { failureRedirect: "/users/register" }), (req, res)=>{
    User.findById(req.user._id).then((rUser)=>{
+    rUser.delete = false;
     rUser.online = true;
     rUser.save();
    });
