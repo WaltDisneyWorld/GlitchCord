@@ -32,11 +32,30 @@
                                         <%});%>
                                       
                                   </ul>
+                              </div>
+                              <hr>
+                              <div class="scroll-hijack">
                                      <ul class="list">
-                                       
+                                         <h2>
+                                            Client info
+                                         </h2>
+                                         <p id="browser"></p>
+                                         <p id="browserversion"></p>
+                                         <p id="platform"></p>
                                       
                                     </ul>
-                                </div>
+                                  <script>
+                                    document.getElementById("browser").innerHTML =
+                                      "<b>browser = </b> " + navigator.appName;
+                                    document.getElementById("browserversion").innerHTML = 
+                                      "<b>browser version = </b> " + navigator.appVersion;  
+                                    document.getElementById("platform").innerHTML =
+                                      "<b>client Platform</b> = " + navigator.platform;
+  
+
+                                  </script>
+                              </div>
+                              <hr>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-25 visible-xs visible-sm"></div>
