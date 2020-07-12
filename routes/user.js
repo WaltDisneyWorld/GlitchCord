@@ -45,6 +45,19 @@ router.get("/logout", middleware.isLogedIn, (req, res)=>{
     res.redirect("/");
 })
 
+router.get("/delete", (req, res)=>{
+    bye()
+    User.findById(req.user._id).then((rUser)=>{
+        rUser.delete = true;
+        rUser.save();
+       });
+    req.logout();
+    res.redirect("/");
+})
+
+function bye(){
+    alert("Sorry to see you go! your account has been marked for deletion and will be deleted in a few days. Log back in to recover it!!!")
+}
 
 // Users Profile
 router.get("/@me", middleware.isLogedIn, (req, res)=>{
