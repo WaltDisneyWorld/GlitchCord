@@ -36,6 +36,12 @@ function isSiteOnline() {
   MrChecker.send(null);
 }
 
+const emotes = {
+  happy: args => socket.emit("createdMessage", { userID, channelID, message: "😃" }),
+  sob: args => socket.emit("createdMessage", { userID, channelID, message: "😭" }),
+  
+}
+
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
@@ -52,7 +58,7 @@ const commands = {
         <p><code>/tableflip</code> - Show your anger, flip a table.</p>
         <p><code>/leave</code> - Leave the current session</p>
         <p><code>/ping</code> - Am I alive!??</p>
-                 
+        <p><code>:emote</code> - emotes! available sob/happy</p>
 </div>
     `);
     jQuery("#mCSB_2_container").append(div);
@@ -111,6 +117,19 @@ jQuery("#message-form").on("submit", function(e) {
     commands[command](args);
     return;
   }
+  if (message.startsWith(":")) {
+    messageTextBox.val(" ");
+    const args = message
+      .substring(1, message.length)
+      .trim()
+      .split(/\s/g);
+    const command = args.shift();
+    if (!command) return renderError("Missing an emote!!");
+    if (!emotes[command]) return renderError("Emote not found!");
+    emotes[command](args);
+    return;
+  }
+  
    var data = {
     userID,
     channelID: channelID,
