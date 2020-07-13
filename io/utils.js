@@ -7,7 +7,7 @@ const socket = require("socket.io");
 const utils     = {};
 
 utils.saveMessage = function saveMessage(io, data){
-    User.findById(ObjectID(data.userID)).then((rUser)=>{
+        User.findById(ObjectID(data.userID)).then((rUser)=>{
         const msg = {
             text: data.message.toString().safe(),
             author: rUser,
@@ -16,7 +16,7 @@ utils.saveMessage = function saveMessage(io, data){
             Channel.findByIdAndUpdate(ObjectID(data.channelID)).then((rChannel)=>{
                 rChannel.message.push(rMsg);
                 rChannel.save();
-                // io.to(data.channelID).emit("newMessage", msg);
+                //io.to(data.channelID).emit("newMessage", msg);
                 io.to(data.channelID).emit("newMessage", rMsg);
             }).catch((e)=>{
                 console.log(e);

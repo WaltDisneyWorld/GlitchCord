@@ -10,9 +10,7 @@ module.exports = io => {
     });
 
     socket.on("createdMessage", (data, callback) => {
-      if (io == "pi") {
-        
-      }
+
       saveMessage(io, data);
       if (typeof callback === "function") callback();
     });
