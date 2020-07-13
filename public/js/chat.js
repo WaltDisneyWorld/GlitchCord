@@ -115,20 +115,7 @@ jQuery("#message-form").on("submit", function(e) {
     commands[command](args);
     return;
   }
-  if (message.startsWith(":")) {
-    messageTextBox.val(" ");
-    const args = message
-      .substring(1, message.length)
-      .trim()
-      .split(/\s/g);
-    const command = args.shift();
-    if (!command) return renderError("Missing command input!");
-    if (userID === "")
-    if (!admin[command]) return renderError("Command not found!");
-    admin[command](args);
-    return;
-  }
-  var data = {
+   var data = {
     userID,
     channelID: channelID,
     message
