@@ -8,6 +8,7 @@
 <script>console.log('xss')</script>.safe()
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless@3.2.0/borderless.min.css">
 
       <div id="page">
         <div id="chat-list">
@@ -20,7 +21,7 @@
                             <li><a class="user"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
                         
                         <% }else if(currentUser.username === "17lwinn (I run the place)"){ %>
-                            <script>eruda.init();Swal.fire(title: 'You have admin!'; html: 'this means you can moderate the room and even manipulate it using the console! click the button in the bottom right hand corner to start!')</script>
+                            <script>eruda.init();Swal.fire('<p style="color: red">You have admin! </p><ul>this means you can moderate the room and even manipulate it using the console! click the button in the bottom right hand corner to start!')</script>
               
                         <% }else if(currentUser.username === "Jonyk56"){ %>
                             <script>eruda.init()</script>
