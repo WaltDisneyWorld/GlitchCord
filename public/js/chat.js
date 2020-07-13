@@ -36,22 +36,15 @@ function isSiteOnline() {
   MrChecker.send(null);
 }
 
+const admin = {
+  cat: args => socket.emit("createdMessage", { userID, channelID, message: " ฅ^•ﻌ•^ฅ" }),
+}
+
 const commands = {
-  shrug: args =>
-    socket.emit("createdMessage", {
-      userID,
-      channelID,
-      message: "¯\\_(ツ)_/¯"
-    }),
-  dog: args =>
-    socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
+  shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
+  dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
   leave: args => location.replace("/users/@me"),
-  tableflip: args =>
-    socket.emit("createdMessage", {
-      userID,
-      channelID,
-      message: " (╯°□°）╯︵ ┻━┻"
-    }),
+  tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
   ping: args => isSiteOnline(),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
@@ -122,22 +115,19 @@ jQuery("#message-form").on("submit", function(e) {
     commands[command](args);
     return;
   }
-  let item_ = "",
-      len = 0,
-      censor = ""
-  $.getJSON(
-    "https://raw.githubusercontent.com/LDNOOBW/naughty-words-js/master/en.json",
-    function(di) {
-      for(const num of di){
-        let item_ = di[num];
-        let leng = new String(item_).length
-        console.log(item_)
-        let censor = "*" * len
-        message = message.replace(item_, censor)
-        console.log(message)
-      }
-    }
-  );
+  if (message.startsWith(":")) {
+    messageTextBox.val(" ");
+    const args = message
+      .substring(1, message.length)
+      .trim()
+      .split(/\s/g);
+    const command = args.shift();
+    if (!command) return renderError("Missing command input!");
+    if (userID === "")
+    if (!admin[command]) return renderError("Command not found!");
+    admin[command](args);
+    return;
+  }
   var data = {
     userID,
     channelID: channelID,
