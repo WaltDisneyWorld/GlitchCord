@@ -10,7 +10,6 @@ module.exports = io => {
     });
 
     socket.on("createdMessage", (data, callback) => {
-
       saveMessage(io, data);
       if (typeof callback === "function") callback();
     });
