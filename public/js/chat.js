@@ -36,10 +36,6 @@ function isSiteOnline() {
   MrChecker.send(null);
 }
 
-const admin = {
-  cat: args => socket.emit("createdMessage", { userID, channelID, message: " ฅ^•ﻌ•^ฅ" }),
-}
-
 const commands = {
   shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
   dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
