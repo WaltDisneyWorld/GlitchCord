@@ -17,5 +17,12 @@ module.exports = io => {
     socket.on("disconnect", () => {
       console.log("Diconected");
     });
-  });
-};
+    
+    function update() {
+
+    if (newPrice < oldPrice) {
+      //do your stuff
+    }
+    
+  };
+)}
