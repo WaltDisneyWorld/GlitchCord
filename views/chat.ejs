@@ -44,19 +44,14 @@
             <button class="btn btn-primary btn-radius" title="begin video chat, this will take you to an external service">
               <i class="fas fa-video"></i>
             </button>
-          </a>
-            
-            <button class="btn btn-primary btn-radius" data-toggle="tooltip" data-placement="right" data-title="Slowdown mode pauses the screen<br>for a 30 second break" title="Enter slowdown mode">
-              <i class="fas fa-moon"></i>
-            </button>
-            
+          </a>            
             <script>
              function sleep(){
                let timerInterval
                 Swal.fire({
-                  title: 'Auto close alert!',
-                  html: 'I will close in <b></b> milliseconds.',
-                  timer: 2000,
+                  title: 'Rest mode active',
+                  html: 'This will close in <b></b> milliseconds. <br> go grab a coffee while its loading',
+                  timer: 60000,
                   timerProgressBar: true,
                   onBeforeOpen: () => {
                     Swal.showLoading()
@@ -81,6 +76,10 @@
                 })
              }
             </script>
+            <button id="sleep" onclick="sleep()" class="btn btn-primary btn-radius" data-toggle="tooltip" data-placement="right" data-title="Slowdown mode pauses the screen<br>for a 30 second break" title="Enter rest mode">
+              <i class="fas fa-moon"></i>
+            </button>
+            
       </center>
         </div>
         </div>
