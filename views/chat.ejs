@@ -40,17 +40,19 @@
             </ul>
         <div id="chat-options" style="position: fixed; bottom: 0;">
           <center>
+            <!-- video chat code -->
             <a target="_blank" href="https://glitchchord-beta.glitch.me">
             <button class="btn btn-primary btn-radius" title="begin video chat, this will take you to an external service">
               <i class="fas fa-video"></i>
             </button>
-          </a>            
+          </a>      
+            <!-- 'rest mode' timer -->
             <script>
              function sleep(){
                let timerInterval
                 Swal.fire({
                   title: 'Rest mode active',
-                  html: 'This will close in <b></b> milliseconds. <br> go grab a coffee while its loading',
+                  html: 'This will close in <b></b> milliseconds. <br> Go grab a coffee <br> <img src="https://media1.tenor.com/images/1c81f6dfe55225818d602feae7fee6c3/tenor.gif?itemid=11932609">',
                   timer: 60000,
                   timerProgressBar: true,
                   onBeforeOpen: () => {
