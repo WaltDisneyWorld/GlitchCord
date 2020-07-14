@@ -20,6 +20,13 @@ const   _         = require("lodash");
             message: "Not a valid Email",
         },
     },
+     usern: {
+          type: String,
+          required: false,
+          minlength: 1,
+          unique: false,
+      },
+
     password: {
         type: String,
         minlength: 6,

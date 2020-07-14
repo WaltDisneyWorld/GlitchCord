@@ -5,7 +5,7 @@
     <script>
     Swal.fire(
       'Updates!',
-      '- swear filter and delete account',
+      '- markdown support!!!',
       'question'
     )  
     </script>
@@ -74,7 +74,12 @@
                                       <label for="profile_email"><code>Email</code></label>
                                         <input type="email" name="user[email]" id="profile_email" class="form-control" value="<%= currentUser.email %>" />
                                     </div>
-                                  
+                                    
+                                    <div class="form-group">
+                                        <label for="profile_status"><code>Status</code></label>
+                                          <input type="test" name="user[status]" id="profile_status" class="form-control" value="<%= currentUser.status %>" />
+                                      </div>
+
                                     <div class="form-group">
                                       <label for="profile_username"><code>Username</code></label>
                                       <input type="text" name="user[username]" id="profile_username" class="form-control" value="<%= currentUser.username %>" />
