@@ -25,6 +25,17 @@ var cookieParser = require('cookie-parser')
 require("./io/index")(io);
 require("string.prototype.safe");
 
+function checkHttps(req, res, next){
+  // protocol check, if http, redirect to https
+  
+  if(req.get('X-Forwarded-Proto').indexOf("https")!=-1){
+    return next()
+  } else {
+    res.redirect('https://' + req.hostname + req.url);
+  }
+}
+
+app.all('*', checkHttps);
 
 // Configure app and mongoose
 app.use(express.static(__dirname + "/public"));
