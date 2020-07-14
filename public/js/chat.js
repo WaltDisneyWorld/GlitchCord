@@ -106,6 +106,7 @@ jQuery("#message-form").on("submit", function(e) {
 
   if (message === "") return;
 
+  
   if (message.startsWith("/")) {
     messageTextBox.val(" ");
     const args = message
