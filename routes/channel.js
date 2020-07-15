@@ -58,7 +58,6 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
 
             rChannel.participant.push(rUser._id);
           
-          if(rChannel ==)
             // rChannel.online
             rChannel.save();
             res.redirect(`/channel/${rChannel._id}`);

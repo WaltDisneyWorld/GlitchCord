@@ -2,6 +2,11 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
+const   Channel     = require("../../models/channel");
+
+function test() {
+  channel.findOne({name: 'S2SL'}).remove().exec();
+}
 function isSiteOnline() {
   var MrChecker = new XMLHttpRequest(),
     CheckThisUrl = "//glitchchord.glitch.me";
