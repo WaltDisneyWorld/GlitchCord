@@ -17,21 +17,41 @@
             <ul class="chat-list scroll-hijack">
                     <% channel.participant.forEach(function(participant){ %>
                         <%if(participant._id.equals(currentUser._id)){ %>
+<script>
+function admin(){
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    onOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
 
+  Toast.fire({
+    icon: 'info',
+    title: 'Admin loaded successfully'
+  })
+}
+              
+</script>
                         <% }else if(participant.online === true){ %>
                             <li><a class="user"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
                         
                         <% }else if(currentUser.username === "17lwinn (I run the place)"){ %>
-                            <script>eruda.init();Swal.fire('<p style="color: red">You have admin! </p><<ul>this means you can moderate the room and even manipulate it using the console! click the button in the bottom right hand corner to start!')</script>
+                            <script>admin()</script>
 
                         <% }else if(currentUser.username === "Jonyk56"){ %>
-                            <script>eruda.init();Swal.fire('<p style="color: red">You have admin! </p><ul>this means you can moderate the room and even manipulate it using the console! click the button in the bottom right hand corner to start!')</script>
-                        
+                            <script>admin()</script>
+
                         <% }else if(currentUser.username === "RiversideRocks"){ %>
-                            <script>eruda.init();Swal.fire('<p style="color: red">You have admin! </p><ul>this means you can moderate the room and even manipulate it using the console! click the button in the bottom right hand corner to start!')</script>
-              
+                            <script>admin()</script>
+
                         <% }else if(currentUser.username === "codeingiscool"){ %>
-                            <script>eruda.init();Swal.fire('<p style="color: red">You have admin! </p><br><ul>this means you can moderate the room and even manipulate it using the console! click the button in the bottom right hand corner to start!')</script>
+                            <script>admin()</script>
 
                                       
                     <% }else{ %>
