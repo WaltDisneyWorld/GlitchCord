@@ -1,5 +1,9 @@
 There should be 3 levels of admin
 
-- contributor
+- contributer
 - moderator
 - admin
+
+---
+
+next update: ability to rename channels

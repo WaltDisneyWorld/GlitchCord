@@ -57,7 +57,6 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
             rUser.save();
 
             rChannel.participant.push(rUser._id);
-          
             // rChannel.online
             rChannel.save();
             res.redirect(`/channel/${rChannel._id}`);
@@ -135,7 +134,6 @@ router.get("/:id", middleware.isLogedIn, middleware.isChannelParticipant, (req, 
         console.log(e);
     });
 });
-
 
 
 module.exports = router;
