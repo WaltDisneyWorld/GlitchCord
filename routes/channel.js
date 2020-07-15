@@ -135,5 +135,4 @@ router.get("/:id", middleware.isLogedIn, middleware.isChannelParticipant, (req, 
     });
 });
 
-
 module.exports = router;
