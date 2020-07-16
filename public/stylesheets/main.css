@@ -508,9 +508,10 @@ a:focus {
   padding-top: 60px; }
 
 #chat-list {
+  overflow: auto;
   position: fixed;
   left: 52px;
-  top: 60px;
+  top: 40px;
   width: 240px;
   background: #172c48;
   height: calc(100% - 60px);

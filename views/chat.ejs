@@ -17,28 +17,28 @@
             <ul class="chat-list scroll-hijack">
                     <% channel.participant.forEach(function(participant){ %>
                         <%if(participant._id.equals(currentUser._id)){ %>
-<script>
-function admin(){
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    onOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  })
+                        <script>
+                        function admin(){
+                          const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            onOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                          })
 
-  Toast.fire({
-    icon: 'info',
-    title: 'Admin loaded successfully'
-  })
-}
-eruda.init()
-              
-</script>
+                          Toast.fire({
+                            icon: 'info',
+                            title: 'Admin loaded successfully'
+                          })
+                        }
+                        eruda.init()
+
+                        </script>
                         <% }else if(participant.online === true){ %>
                             <li><a class="user"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
                         
