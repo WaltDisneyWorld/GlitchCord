@@ -4,7 +4,7 @@ const Message = require("../models/message");
 const Channel = require("../models/channel");
 const socket = require("socket.io");
 const Filter = require("bad-words");
-var md   = require('markdown');
+var md = require('markdown-it')();
 const filter = new Filter();
 
 const utils = {};
@@ -13,7 +13,7 @@ utils.saveMessage = function saveMessage(io, data) {
   User.findById(ObjectID(data.userID))
     .then(rUser => {
       const msg = {
-        text: filter.clean(md.parse(data.message.toString().safe())),
+        text: filter.clean(md.render(data.message.toString().safe())),
         author: rUser
       };
       Message.create(msg)
