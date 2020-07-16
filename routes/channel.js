@@ -30,6 +30,7 @@ const upload = multer({
 });
 
 
+
 router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req, res)=>{
     if(!ObjectID.isValid(req.user._id)){
         return res.redirect("/");
