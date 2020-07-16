@@ -511,7 +511,7 @@ a:focus {
   overflow: auto;
   position: fixed;
   left: 52px;
-  top: 40px;
+  top: 60px;
   width: 240px;
   background: #172c48;
   height: calc(100% - 60px);
@@ -542,7 +542,7 @@ a:focus {
   list-style: none;
   padding: 0;
   margin: 12px 5px 0;
-  max-height: 100%; }
+  max-height: 75%; }
   .chat-list li {
     position: relative; }
   .chat-list li > a {
