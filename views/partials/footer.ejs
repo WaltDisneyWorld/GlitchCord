@@ -5,6 +5,8 @@
         <script src="/js/libs/bootstrap.min.js"></script>
 
         <!-- Custom JS -->
+        <script src="/js/pwa.js"></script>
+        <link rel="manifest" href="/js/pwa.webmanifest">
         <script src="/socket.io/socket.io.js"></script>
         <% if(title !== "Login" && title !== "Register" && title !== "username" && title !== "join"){ %>
             <script>var userID = "<%= currentUser._id %>";</script>
