@@ -6,4 +6,4 @@ There should be 3 levels of admin
 
 ---
 
-next update: ability to rename channels
+next update: ability to disable the profanity filter
