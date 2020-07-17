@@ -39,9 +39,12 @@
                         eruda.init()
 
                         </script>
-                        <% }else if(participant.online === true){ %>
-                            <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
-                        
+                        <% }else if(participant.online === false){ %>
+                            <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><del><%= participant.username %></del></a></li>
+              
+                        <% }else if(participant.online === false){ %>
+                            <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><del><%= participant.username %></del></a></li>
+              
                         <% }else if(currentUser.username === "17lwinn (I run the place)"){ %>
                             <script>admin()</script>
 
