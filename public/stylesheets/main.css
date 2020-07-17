@@ -540,6 +540,8 @@ a:focus {
   border-radius: 60%; }
 
 .chat-list {
+  overscroll-behavior: none;
+  overflow: auto;
   list-style: none;
   padding: 0;
   margin: 12px 5px 0;
@@ -568,6 +570,8 @@ a:focus {
     margin-top: 4px; }
 
 .list {
+  overscroll-behavior: none;
+  overflow: auto;
   list-style: none;
   padding: 0;
   margin: 12px 5px 0;
