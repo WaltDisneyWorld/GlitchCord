@@ -50,6 +50,28 @@
                         eruda.init()
 
                         </script>
+                        <script>
+                        function banned(){
+                          const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            onOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                          })
+
+                          Toast.fire({
+                            icon: 'error',
+                            title: 'You have been banned from chatting, all messages will be ignored'
+                          })
+                        }
+                        socket.disconnect()
+                        console.error('You were banned, you cannot chat or communicate with other users- ')
+                        </script>
                         <% }else if(participant.online === false){ %>
                             <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><del><%= participant.username %></del></a></li>
               
