@@ -18,6 +18,17 @@
                     <% channel.participant.forEach(function(participant){ %>
                         <%if(participant._id.equals(currentUser._id)){ %>
                         <script>
+                          function banned(){
+                            Swal.fire({
+                              position: 'top-end',
+                              icon: 'error',
+                              title: 'Your account has been banned from chatting',
+                              showConfirmButton: false,
+                              allowOutsideClick: false
+                            })
+                          }
+                        </script>
+                        <script>
                         function admin(){
                           const Toast = Swal.mixin({
                             toast: true,
