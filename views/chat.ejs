@@ -59,7 +59,7 @@
 
                                       
                     <% }else{ %>
-                            <li><a><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
+              <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></li></li></a>
                         <% } %>
                     <% }); %>
             </ul>
@@ -112,7 +112,7 @@
         </div>
         <div id="chat" class="page">
             <div class="page-header clearfix">
-                <span><%= channel.channel_name %></span>
+                  <u><span><%= channel.channel_name %></span></u>
                 <ul>
                     <!-- <li><a title="Online" href="#">Online - 1</a></li> -->
                 </ul>
