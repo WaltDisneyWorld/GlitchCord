@@ -45,6 +45,7 @@
                         <% }else if(participant.online === true){ %>
                             <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
               
+
                         <% }else if(currentUser.username === "17lwinn (I run the place)"){ %>
                             <script>admin()</script>
 
@@ -139,5 +140,4 @@
             </div>
         </div>
     </div>
-
 <% include partials/footer %>
