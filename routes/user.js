@@ -56,14 +56,10 @@ router.get("/delete", (req, res)=>{
     res.redirect("/");
 })
 
-router.get("/delete", (req, res)=>{
-    User.findById(req.user._id).then((rUser)=>{
-        rUser.online = false;
-        rUser.delete = true;
-        rUser.save();
-       });
-    req.logout();
-    res.redirect("/");
+router.get("/addpoint", (req, res)=>{
+    await User.updateOne({ ID: req.user._id}, { $inc: { power: 1 }})
+    rUser.save();
+    })
 })
 
 // Users Profile
