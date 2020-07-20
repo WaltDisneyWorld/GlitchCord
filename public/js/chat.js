@@ -2,15 +2,6 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
-function banned(){
-  Swal.fire({
-    position: 'top-end',
-    icon: 'error',
-    title: 'Your account has been banned from chatting',
-    showConfirmButton: false,
-    allowOutsideClick: false
-  })
-}
 
 function isSiteOnline() {
   var MrChecker = new XMLHttpRequest(),
