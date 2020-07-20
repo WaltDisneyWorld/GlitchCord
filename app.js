@@ -112,6 +112,6 @@ app.use("/users", userRoute);
 app.use("/channel", channelRoute);
 app.use(ajaxRoute);
 app.get('*', function(req, res){
-    res.status(404).send('<body style="background-color:black;"><center><a href="https://http.cat"><img src="https://http.cat/404"></a></center>');
+    res.status(404).send('<body style="background-color:black;font-family:arial;color:white;"><center>Not Found - You took a wrong turn.<br><a href="https://http.cat"><img src="https://http.cat/404"></a></center>');
   });
 
