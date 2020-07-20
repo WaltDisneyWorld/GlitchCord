@@ -25,10 +25,6 @@ const channelSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    nsfw: {
-        type: Boolean,
-        default: false,
-    },
     channel_picture: {
         type: String,
         default: "/img/placeholder.png",
