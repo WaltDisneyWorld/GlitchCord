@@ -69,6 +69,14 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
     });
 });
 
+router.get("/nsfw", (req, res)=>{
+    Channel.findById(req.channel._id).then((rChannel)=>{
+        rChannel.nsfw = true;
+        rChannel.save();
+       });
+    res.redirect("/");
+})
+
 
 router.get("/join/:id", (req, res)=>{
     if(!ObjectID.isValid(req.params.id)){
