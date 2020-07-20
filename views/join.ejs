@@ -11,9 +11,6 @@
             </div>
             <div class="col">
                 <h6 class="mb-10"><%= channel.channel_name %></h6>
-                <% if channel.nsfw === true{ %>
-                    <script>alert("hi")</script>
-                <% } %>
                 <ul class="group-stats">
                     <li><%= channel.participant.length %> users registered</li>
                     <% var count = 0; %>
@@ -29,7 +26,7 @@
         </div>
         <div class="invitation-join">
                 <form action="/channel/join/<%= channel._id %>" method="POST">
-                    <button type="submit" class="btn btn-block btn-primary">Join</button>
+                    <button type="submit" class="btn btn-block btn-primary">Join <%= channel.channel_name %></button>
                 </form> 
         </div>
     </div>

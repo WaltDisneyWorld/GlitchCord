@@ -2,7 +2,6 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
-
 function isSiteOnline() {
   var MrChecker = new XMLHttpRequest(),
     CheckThisUrl = "//glitchchord.glitch.me";
@@ -37,13 +36,6 @@ function isSiteOnline() {
   MrChecker.send(null);
 }
 
-function addpoint(){
-  user.findOneAndUpdate(user_id, {$inc: {power: 1}}, function (err, doc) {
-  if (err) return res.send(500, {error: err});
-  return doc;
-})
-}
-
 const emotes = {
   happy: args => socket.emit("createdMessage", { userID, channelID, message: "😃" }),
   sob: args => socket.emit("createdMessage", { userID, channelID, message: "😭" }),
@@ -74,7 +66,6 @@ const commands = {
     scrollToBottom();
   }
 };
-
 
 socket.on("connect", function() {
   console.log("Connected");
