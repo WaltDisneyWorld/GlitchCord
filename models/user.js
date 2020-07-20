@@ -59,10 +59,6 @@ const   _         = require("lodash");
         type: Boolean,
         default: false,
     },
-   power: {
-        type: Number,
-        default: 0,
-    },
 });
 
 // userSchema.plugin(passportLocalMongoose);

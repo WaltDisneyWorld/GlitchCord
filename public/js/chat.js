@@ -2,7 +2,6 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
-const user = require("../../models/user.js");
 
 function isSiteOnline() {
   var MrChecker = new XMLHttpRequest(),
