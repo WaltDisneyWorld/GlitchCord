@@ -8,7 +8,9 @@ module.exports = io => {
       socket.join(params.channelID);
       if (typeof callback === "function") callback();
     });
-
+    
+    
+    
     socket.on("createdMessage", (data, callback) => {
       saveMessage(io, data);
       if (typeof callback === "function") callback();

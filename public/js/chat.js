@@ -75,6 +75,7 @@ const commands = {
   }
 };
 
+
 socket.on("connect", function() {
   console.log("Connected");
 
