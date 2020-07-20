@@ -57,9 +57,11 @@ router.get("/delete", (req, res)=>{
 })
 
 router.get("/addpoint", (req, res)=>{
-    await User.updateOne({ ID: req.user._id}, { $inc: { power: 1 }})
+  User.findById(req.user._id).then((rUser)=>{
+    rUser.updateOne({ ID: req.user._id}, { $inc: { power: 1 }})
     rUser.save();
-    })
+  });
+  res.
 })
 
 // Users Profile
