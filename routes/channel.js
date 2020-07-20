@@ -39,6 +39,7 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
     const channel = {
         creator: req.user._id,
         channel_name: req.body.channel_name,
+        _id: req.channel._id,
     };
 
     if(req.file){
@@ -70,7 +71,7 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
 });
 
 router.get("/nsfw", (req, res)=>{
-    Channel.findById(req.channel._id).then((rChannel)=>{
+    Channel.findById(Channel._id).then((rChannel)=>{
         rChannel.nsfw = true;
         rChannel.save();
        });
