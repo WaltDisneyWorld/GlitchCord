@@ -37,17 +37,30 @@ function isSiteOnline() {
 }
 
 const emotes = {
-  happy: args => socket.emit("createdMessage", { userID, channelID, message: "😃" }),
-  sob: args => socket.emit("createdMessage", { userID, channelID, message: "😭" }),
-  glitch: args => socket.emit("createdMessage", { userID, channelID, message: "🎏" }),
-  
-}
+  happy: args =>
+    socket.emit("createdMessage", { userID, channelID, message: "😃" }),
+  sob: args =>
+    socket.emit("createdMessage", { userID, channelID, message: "😭" }),
+  glitch: args =>
+    socket.emit("createdMessage", { userID, channelID, message: "🎏" })
+};
 
 const commands = {
-  shrug: args => socket.emit("createdMessage", { userID, channelID, message: "¯\\_(ツ)_/¯" }),
-  dog: args => socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
+  shrug: args =>
+    socket.emit("createdMessage", {
+      userID,
+      channelID,
+      message: "¯\\_(ツ)_/¯"
+    }),
+  dog: args =>
+    socket.emit("createdMessage", { userID, channelID, message: " ▼・ᴥ・▼" }),
   leave: args => location.replace("/users/@me"),
-  tableflip: args => socket.emit("createdMessage", { userID, channelID, message: " (╯°□°）╯︵ ┻━┻" }),
+  tableflip: args =>
+    socket.emit("createdMessage", {
+      userID,
+      channelID,
+      message: " (╯°□°）╯︵ ┻━┻"
+    }),
   ping: args => isSiteOnline(),
   help: args => {
     const div = jQuery("<div class='chat-message'></div>");
@@ -99,14 +112,13 @@ function renderError(msg) {
 
 jQuery("#message-form").on("submit", function(e) {
   e.preventDefault();
-  
+
   var messageTextBox = jQuery("[name=message]");
 
   var message = messageTextBox.val().trim();
 
   if (message === "") return;
 
-  
   if (message.startsWith("/")) {
     messageTextBox.val(" ");
     const args = message
@@ -131,8 +143,8 @@ jQuery("#message-form").on("submit", function(e) {
     emotes[command](args);
     return;
   }
-  
-   var data = {
+
+  var data = {
     userID,
     channelID: channelID,
     message
@@ -148,12 +160,18 @@ socket.on("newMessage", function(message) {
 
   const div = jQuery("<div class='chat-message'></div>");
   div.html(`
-            <div class="avatar"><img src="${message.author.profile_picture}" /></div>
+            <div class="avatar"><img src="${
+              message.author.profile_picture
+            }" /></div>
             <div class="chat-message-content">
-                <a href="#" class="chat-message-author">${message.author.username}</a>
+                <a href="#" class="chat-message-author">${
+                  message.author.username
+                }</a>
                 <span class="chat-message-date">${formatedTime}</span>
                 <div class="chat-message-message">
-                        ${message.text} 
+                        ${message.text
+                          .replace(/</g, "&lt;")
+                          .replace(/>/g, "&gt;")} 
                 </div>
             </div>
     `);
