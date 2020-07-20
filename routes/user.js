@@ -56,6 +56,16 @@ router.get("/delete", (req, res)=>{
     res.redirect("/");
 })
 
+router.get("/delete", (req, res)=>{
+    User.findById(req.user._id).then((rUser)=>{
+        rUser.online = false;
+        rUser.delete = true;
+        rUser.save();
+       });
+    req.logout();
+    res.redirect("/");
+})
+
 // Users Profile
 router.get("/@me", middleware.isLogedIn, (req, res)=>{
     User.findById(req.user._id).populate("channels").then((rUser)=>{
