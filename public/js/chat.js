@@ -124,7 +124,7 @@ jQuery("#message-form").on("submit", function(e) {
     const args = message
       .substring(1, message.length)
       .trim()
-      .split(/\s/g);
+      .split(/\s+/g);
     const command = args.shift();
     if (!command) return renderError("Missing command input!");
     if (!commands[command]) return renderError("Command not found!");
@@ -136,7 +136,7 @@ jQuery("#message-form").on("submit", function(e) {
     const args = message
       .substring(1, message.length)
       .trim()
-      .split(/\s/g);
+      .split(/\s+/g);
     const command = args.shift();
     if (!command) return renderError("Missing an emote!!");
     if (!emotes[command]) return renderError("Emote not found!");
@@ -164,9 +164,9 @@ socket.on("newMessage", function(message) {
               message.author.profile_picture
             }" /></div>
             <div class="chat-message-content">
-                <a href="#" class="chat-message-author">${
-                  message.author.username
-                }</a>
+                <a href="#" class="chat-message-author">${message.author.username
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")}</a>
                 <span class="chat-message-date">${formatedTime}</span>
                 <div class="chat-message-message">
                         ${message.text
