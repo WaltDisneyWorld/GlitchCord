@@ -46,8 +46,6 @@ router.get("/logout", middleware.isLogedIn, (req, res)=>{
     res.redirect("/");
 })
 
-
-
 router.get("/delete", (req, res)=>{
     User.findById(req.user._id).then((rUser)=>{
         rUser.online = false;
@@ -56,15 +54,6 @@ router.get("/delete", (req, res)=>{
        });
     req.logout();
     res.redirect("/");
-})
-
-router.get("/addpoint", (req, res)=>{
-  res.locals.currentUser = req.user;
-  User.findById(req.user._id).then((rUser)=>{
-    rUser.updateOne({ ID: req.user._id}, { $inc: { power: 1 }})
-    rUser.save();
-  });
-  res.redirect("/");
 })
 
 // Users Profile

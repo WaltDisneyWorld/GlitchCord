@@ -39,6 +39,7 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
     const channel = {
         creator: req.user._id,
         channel_name: req.body.channel_name,
+        _id: req.channel._id,
     };
 
     if(req.file){
