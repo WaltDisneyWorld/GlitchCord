@@ -71,10 +71,10 @@ router.post("/new", middleware.isLogedIn, upload.single("channel_picture"), (req
 });
 
 router.get("/nsfw", (req, res)=>{
-    Channel.findById(Channel._id).then((rChannel)=>{
+    Channel.findOne({ '_id': req.channel.id }.then((rChannel)=>{
         rChannel.nsfw = true;
         rChannel.save();
-       });
+       }))
     res.redirect("/");
 })
 
