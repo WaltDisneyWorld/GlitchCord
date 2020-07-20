@@ -2,7 +2,7 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
-const User = require("../../models/user");
+const user = require("../../models/user.js");
 
 function isSiteOnline() {
   var MrChecker = new XMLHttpRequest(),
@@ -36,6 +36,13 @@ function isSiteOnline() {
     }
   }
   MrChecker.send(null);
+}
+
+function addpoint(){
+  user.findOneAndUpdate(user_id, {$inc: {power: 1}}, function (err, doc) {
+  if (err) return res.send(500, {error: err});
+  return doc;
+})
 }
 
 const emotes = {
