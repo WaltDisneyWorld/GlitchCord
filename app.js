@@ -46,19 +46,6 @@ app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.set("view engine", "ejs");
 mongoose.Promise = global.Promise;
-var GitHubStrategy = require('passport-github').Strategy;
-
-passport.use(new GitHubStrategy({
-    clientID: process.env.client,
-    clientSecret: process.env.secret,
-    callbackURL: "https://glitchchord.glitch.me/auth/github/callback"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ githubId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
 
 // boot if db is available
 mongoose.connect(config.dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
