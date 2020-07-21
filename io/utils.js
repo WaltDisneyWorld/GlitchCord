@@ -12,7 +12,7 @@ utils.saveMessage = function saveMessage(io, data) {
   User.findById(ObjectID(data.userID))
     .then(rUser => {
       const msg = {
-        text: md.render(filter.clean(data.message.toString().safe())),
+        text: filter.clean(data.message.toString().safe()),
         author: rUser
       };
       Message.create(msg)
