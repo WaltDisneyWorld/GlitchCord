@@ -6,13 +6,14 @@ const socket = require("socket.io");
 const Filter = require("bad-words");
 const filter = new Filter();
 var md = require('markdown-it')
+
 const utils = {};
 
 utils.saveMessage = function saveMessage(io, data) {
   User.findById(ObjectID(data.userID))
     .then(rUser => {
       const msg = {
-        text: filter.clean(md.render((data.message.toString().safe()))),
+        text: filter.clean(md.render(data.message.toString().safe())),
         author: rUser
       };
       Message.create(msg)
