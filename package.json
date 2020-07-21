@@ -41,7 +41,7 @@
     "jquery": "^3.5.1",
     "bad-words": "^3.0.3",
     "markdown-it": "^11.0.0",
-    "require": "^2.4.20"
+    "passport-github": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
