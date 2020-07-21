@@ -2,6 +2,7 @@
 const socket = io();
 const chatList = $("#chat-list ul");
 const username = $("#chat-list a");
+var md = require('markdown-it')();
 function isSiteOnline() {
   var MrChecker = new XMLHttpRequest(),
     CheckThisUrl = "//glitchchord.glitch.me";
@@ -157,7 +158,7 @@ jQuery("#message-form").on("submit", function(e) {
 
 socket.on("newMessage", function(message) {
   const formatedTime = moment(message.created_at).format("lll");
-
+  
   const div = jQuery("<div class='chat-message'></div>");
   div.html(`
             <div class="avatar"><img src="${

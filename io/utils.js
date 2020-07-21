@@ -5,15 +5,13 @@ const Channel = require("../models/channel");
 const socket = require("socket.io");
 const Filter = require("bad-words");
 const filter = new Filter();
-var showdown  = require('showdown'),
-    converter = new showdown.Converter()
-const utils = {}
+const utils = {};
 
 utils.saveMessage = function saveMessage(io, data) {
   User.findById(ObjectID(data.userID))
     .then(rUser => {
       const msg = {
-        text: filter.clean(converter.makeHtml(data.message.toString().safe())),
+        text: filter.clean((data.message.toString().safe())),
         author: rUser
       };
       Message.create(msg)
