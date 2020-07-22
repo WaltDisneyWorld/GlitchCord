@@ -23,6 +23,7 @@
                         <% }else if(participant.online === true){ %>
                             <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
 
+              
                     <% }else{ %>
               <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></li></li></a>
                         <% } %>

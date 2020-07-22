@@ -37,6 +37,10 @@ const   _         = require("lodash");
         type: mongoose.Schema.Types.ObjectId,
         ref: "Channel",
     }],
+   badges: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Badge",
+    }],
     profile_picture: {
         type: String,
         default: "/img/placeholder.png",
