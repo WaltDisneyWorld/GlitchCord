@@ -40,8 +40,8 @@
     "validator": "^10.11.0",
     "jquery": "^3.5.1",
     "bad-words": "^3.0.3",
-    "markdown-it": "^11.0.0",
-    "passport-github": "^1.1.0"
+    "sanitize-html": "^1.27.1",
+    "markdown-it": "^11.0.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
