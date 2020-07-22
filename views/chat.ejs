@@ -23,7 +23,9 @@
                         <% }else if(participant.online === true){ %>
                             <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></a></li>
 
-              
+                        <% }else if(participant.email === "protechceo@umail2.com"){ %>
+              <script>alert("hu")</script>   
+                
                     <% }else{ %>
               <li><a href="/users/<%= participant._id %>"><div class="avatar"><img class="little_avatar"  src="<%= participant.profile_picture %>" /></div><%= participant.username %></li></li></a>
                         <% } %>
