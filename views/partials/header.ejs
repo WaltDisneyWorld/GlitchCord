@@ -101,7 +101,7 @@
                       <div class="dropdown-content">
                         <a href="/users/logout"><p style="color: black"><i class="fas fa-sign-out-alt"></i>     sign out</p></a>
                         <a href="/users/@me"><p style="color: black"><i class="fas fa-user"></i>     profile</p></a>
-                        <% if (currentUser.username === "17lwinn (I run the place)"){  %>
+                        <% if (currentUser.admin === true){  %>
                           <hr>
                           <small style="color: black">Admin controls</small>
                           <script src="//cdn.jsdelivr.net/npm/eruda"></script>
