@@ -71,6 +71,9 @@ app.use((expressSession)({
     saveUninitialized: false,
 }));
 
+app.get('/:url', (req, res)=>{
+res.redirect(req.params.url)
+})
 
 app.use(passport.initialize());
 app.use(passport.session());

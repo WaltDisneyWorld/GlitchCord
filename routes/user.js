@@ -28,7 +28,7 @@ router.get("/register", (req, res) => {
   console.log(req.flash("error"));
   res.render("register", { title: "Register" });
 });
-
+  
 router.post(
   "/register",
   passport.authenticate("local-signup", {
