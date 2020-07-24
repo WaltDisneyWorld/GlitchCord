@@ -20,7 +20,7 @@ const app            = express();
 const server         = http.createServer(app);
 const io             = socketIO(server);
 var cookieParser = require('cookie-parser')
-
+const helmet = require('helmet')
 
 // Configure IO
 require("./io/index")(io);
@@ -40,6 +40,7 @@ app.all('*', checkHttps);
 
 // Configure app and mongoose
 app.use(express.static(__dirname + "/public"));
+app.use(helmet())
 var cookieParser = require('cookie-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));

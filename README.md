@@ -18,6 +18,10 @@
 
 - unlike discord, this version is open source and free like discord!
 
+4. **fast**
+
+- we use defresh to load our pages fast, and with no complications!
+
 ------------
 
 This was based off [minicord](https://github.com/ThalKod/discord-clone)- by Thalkod
