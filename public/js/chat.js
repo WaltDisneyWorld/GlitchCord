@@ -37,11 +37,11 @@ function isSiteOnline() {
 }
 
 const emotes = {
-  happy: args =>
+  'happy:': args =>
     socket.emit("createdMessage", { userID, channelID, message: "😃" }),
-  sob: args =>
+  'sob:': args =>
     socket.emit("createdMessage", { userID, channelID, message: "😭" }),
-  glitch: args =>
+  'glitch:': args =>
     socket.emit("createdMessage", { userID, channelID, message: "🎏" })
 };
 
@@ -72,7 +72,7 @@ const commands = {
         <p><code>/tableflip</code> - Show your anger, flip a table.</p>
         <p><code>/leave</code> - Leave the current session</p>
         <p><code>/ping</code> - Am I alive!??</p>
-        <p><code>:emotename</code> - emotes! available names sob/happy/glitch</p>
+        <p><code>:emotename:</code> - emotes! available names sob/happy/glitch</p>
 </div>
     `);
     jQuery("#mCSB_2_container").append(div);
