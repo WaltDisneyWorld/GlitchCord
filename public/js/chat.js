@@ -157,7 +157,7 @@ jQuery("#message-form").on("submit", function(e) {
 
 socket.on("newMessage", function(message) {
   const formatedTime = moment(message.created_at).format("lll");
-  
+
   const div = jQuery("<div class='chat-message'></div>");
   div.html(`
             <div class="avatar"><img src="${
