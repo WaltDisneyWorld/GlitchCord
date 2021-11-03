@@ -37,7 +37,7 @@
     "socket.io": "^2.2.0",
     "string.prototype.safe": "^1.0.0",
     "string.prototype.startswith": "^0.2.0",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "jquery": "^3.5.1",
     "bad-words": "^3.0.3",
     "helmet": "^3.23.3"
